@@ -101,7 +101,7 @@ pub mod input {
 
     use windows::Win32::UI::Input::KeyboardAndMouse::{
         MapVirtualKeyA, SendInput, INPUT, INPUT_0, INPUT_KEYBOARD, KEYBDINPUT,
-        KEYEVENTF_EXTENDEDKEY, KEYEVENTF_KEYUP, VK_LCONTROL, VK_RCONTROL, VK_RETURN, VK_V,
+        KEYEVENTF_EXTENDEDKEY, KEYEVENTF_KEYUP, VK_CONTROL, VK_RETURN, VK_V,
     };
 
     fn send_input(inputs: &[INPUT]) -> Result<()> {
@@ -122,8 +122,8 @@ pub mod input {
                 r#type: INPUT_KEYBOARD,
                 Anonymous: INPUT_0 {
                     ki: KEYBDINPUT {
-                        wVk: VK_LCONTROL,
-                        wScan: unsafe { MapVirtualKeyA(VK_LCONTROL as _, 0) } as _,
+                        wVk: VK_CONTROL,
+                        wScan: unsafe { MapVirtualKeyA(VK_CONTROL as _, 0) } as _,
                         dwFlags: 0,
                         time: 0,
                         dwExtraInfo: 0,
@@ -134,8 +134,8 @@ pub mod input {
                 r#type: INPUT_KEYBOARD,
                 Anonymous: INPUT_0 {
                     ki: KEYBDINPUT {
-                        wVk: VK_LCONTROL,
-                        wScan: unsafe { MapVirtualKeyA(VK_LCONTROL as _, 0) } as _,
+                        wVk: VK_CONTROL,
+                        wScan: unsafe { MapVirtualKeyA(VK_CONTROL as _, 0) } as _,
                         dwFlags: KEYEVENTF_KEYUP,
                         time: 0,
                         dwExtraInfo: 0,
@@ -154,9 +154,9 @@ pub mod input {
                 r#type: INPUT_KEYBOARD,
                 Anonymous: INPUT_0 {
                     ki: KEYBDINPUT {
-                        wVk: VK_RCONTROL,
-                        wScan: unsafe { MapVirtualKeyA(VK_RCONTROL as _, 0) } as _,
-                        dwFlags: KEYEVENTF_EXTENDEDKEY,
+                        wVk: VK_CONTROL,
+                        wScan: unsafe { MapVirtualKeyA(VK_CONTROL as _, 0) } as _,
+                        dwFlags: 0,
                         time: 0,
                         dwExtraInfo: 0,
                     },
@@ -166,8 +166,8 @@ pub mod input {
                 r#type: INPUT_KEYBOARD,
                 Anonymous: INPUT_0 {
                     ki: KEYBDINPUT {
-                        wVk: VK_LCONTROL,
-                        wScan: unsafe { MapVirtualKeyA(VK_LCONTROL as _, 0) } as _,
+                        wVk: VK_CONTROL,
+                        wScan: unsafe { MapVirtualKeyA(VK_CONTROL as _, 0) } as _,
                         dwFlags: KEYEVENTF_EXTENDEDKEY,
                         time: 0,
                         dwExtraInfo: 0,
@@ -216,9 +216,9 @@ pub mod input {
                 r#type: INPUT_KEYBOARD,
                 Anonymous: INPUT_0 {
                     ki: KEYBDINPUT {
-                        wVk: VK_RCONTROL,
-                        wScan: unsafe { MapVirtualKeyA(VK_RCONTROL as _, 0) } as _,
-                        dwFlags: KEYEVENTF_KEYUP | KEYEVENTF_EXTENDEDKEY,
+                        wVk: VK_CONTROL,
+                        wScan: unsafe { MapVirtualKeyA(VK_CONTROL as _, 0) } as _,
+                        dwFlags: KEYEVENTF_KEYUP,
                         time: 0,
                         dwExtraInfo: 0,
                     },
@@ -228,8 +228,8 @@ pub mod input {
                 r#type: INPUT_KEYBOARD,
                 Anonymous: INPUT_0 {
                     ki: KEYBDINPUT {
-                        wVk: VK_LCONTROL,
-                        wScan: unsafe { MapVirtualKeyA(VK_LCONTROL as _, 0) } as _,
+                        wVk: VK_CONTROL,
+                        wScan: unsafe { MapVirtualKeyA(VK_CONTROL as _, 0) } as _,
                         dwFlags: KEYEVENTF_KEYUP | KEYEVENTF_EXTENDEDKEY,
                         time: 0,
                         dwExtraInfo: 0,
