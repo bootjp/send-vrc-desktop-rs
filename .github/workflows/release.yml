@@ -31,7 +31,7 @@ jobs:
 
       - name: Build
         run: cargo build --release --verbose
-      - name: Achive to zip
+      - name: Archive to zip
         run: |
           powershell compress-archive -Path target/release/send-vrc-desktop.exe -DestinationPath dist/send_vrc_desktop.zip
 
