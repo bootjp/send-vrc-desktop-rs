@@ -65,7 +65,9 @@ pub async fn url(req: Json<UrlRequest>) -> impl Responder {
         });
     }
 
-    HttpResponse::Ok().json(UrlResponse {
-        message: String::from("ok"),
-    })
+    HttpResponse::Ok()
+        .append_header(("X-VERSION", "v0.1.0"))
+        .json(UrlResponse {
+            message: String::from("ok"),
+        })
 }
